@@ -12,7 +12,7 @@ namespace :timestamp do
 			Date.today
 			Time.zone.now
 			Time.now.in_time_zone
-		).sort.each do |str|
+		).each do |str|
 			ts = Timestamp.evaluate(str)
 			puts ts
 		end
