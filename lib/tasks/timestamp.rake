@@ -7,7 +7,8 @@ namespace :timestamp do
 			Time.now
 			DateTime.current
 			DateTime.now
-		).each do |str|
+			Date.today
+		).sort.each do |str|
 			ts = Timestamp.evaluate(str)
 			puts ts
 		end
