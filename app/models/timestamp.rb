@@ -10,7 +10,7 @@ class Timestamp < ApplicationRecord
 	end
 
 	def to_s
-		"#{@obj.strftime(@@format)} <- #{@str}"
+		"#{@obj.strftime(@@format)} <- #{@str}\t(#{@obj.class})"
 	end
 
 	def Timestamp.evaluate(str)
