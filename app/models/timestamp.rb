@@ -16,4 +16,12 @@ class Timestamp < ApplicationRecord
 		ts.evaluate!(str)
 		return ts
 	end
+
+	def Timestamp.system_zone
+		return Time.now.zone
+	end
+
+	def Timestamp.rails_zone
+		return Time.zone.name
+	end
 end
