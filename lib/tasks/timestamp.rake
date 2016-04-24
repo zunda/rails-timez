@@ -8,6 +8,8 @@ namespace :timestamp do
 			DateTime.current
 			DateTime.now
 			Date.today
+			Time.zone.now
+			Time.now.in_time_zone
 		).sort.each do |str|
 			ts = Timestamp.evaluate(str)
 			puts ts
