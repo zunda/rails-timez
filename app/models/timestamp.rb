@@ -2,13 +2,15 @@ class Timestamp < ApplicationRecord
 	include ApplicationHelper
 	attr_reader :obj
 
+	@@format = "%Y-%m-%d %H:%M:%S %:z"
+
 	def evaluate!(str)
 		@str = str
 		@obj = eval(str)
 	end
 
 	def to_s
-		"#{@str.inspect} became #{@obj.inspect}"
+		"#{@obj.strftime(@@format)} <- #{@str}"
 	end
 
 	def Timestamp.evaluate(str)
