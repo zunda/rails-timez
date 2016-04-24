@@ -7,9 +7,9 @@ namespace :timestamp do
 		puts "Rails' timezone: #{Timestamp.rails_zone}"
 		%w(
 			Time.now
+			Date.today
 			DateTime.current
 			DateTime.now
-			Date.today
 			Time.zone.now
 			Time.now.in_time_zone
 		).each do |str|
