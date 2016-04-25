@@ -1,4 +1,4 @@
-class CreateTimestamps < ActiveRecord::Migration[5.0]
+class CreateTimestamps < ActiveRecord::Migration
   def change
     create_table :timestamps do |t|
 

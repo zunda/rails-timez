@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 20160424023926) do
 
   create_table "timestamps", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
