@@ -2,7 +2,21 @@
 A small app to check timezones of Times and Dates on Rails
 
 ## Usage
+### Preparation
+Specify Ruby version (optional)
+```
+$ rbenv local 2.3.0
+$ gem install bundler
+$ rbenv rehash
+```
 
+Prepare gems and the database (even not used)
+```
+$ bundle install --path=vendor/bundle
+$ bundle exec rake db:migrate
+```
+
+### Show time
 ```
 $ bundle exec rake timestamp:show
 System timezone: JST
