@@ -44,6 +44,8 @@ Rails' timezone: America/Los_Angeles
 => 2016-04-10
 ```
 
+It seems that `Date.today` calls the method from [a standard library](http://ruby-doc.org/stdlib-2.3.1/libdoc/date/rdoc/Date.html#method-c-today) that honors the system timezone while `Date.yesterday` and `Date.tomorrow` are [from Rails](http://api.rubyonrails.org/v4.2/classes/Date.html#method-c-tomorrow) (ActiveSupport) which honor Rails' timezone.
+
 ## References
 - [RubyとRailsにおけるTime, Date, DateTime, TimeWithZoneの違い - Qiita](http://qiita.com/jnchito/items/cae89ee43c30f5d6fa2c)
 
