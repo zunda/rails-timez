@@ -12,7 +12,7 @@ module RailsTimez
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    ENV['TZ'] = 'Japan'
-    config.time_zone = 'UTC'
+    ENV['TZ'] = 'UTC'
+    config.time_zone = 'America/Los_Angeles'
   end
 end

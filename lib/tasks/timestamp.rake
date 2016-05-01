@@ -22,7 +22,7 @@ namespace :timestamp do
 
 	desc "Time Travel as a Service"
 	task ttaas: :environment do
-		Timecop.freeze(Time.new(1993, 2, 24, 12, 0, 0, "+09:00"))
+		Timecop.freeze(Time.new(2016, 4, 11, 18, 59, 0, "-07:00"))
 		[
 			'Date.today == Date.tomorrow',
 			'Date.today',
