@@ -22,6 +22,8 @@ namespace :timestamp do
 
 	desc "Time Travel as a Service"
 	task ttaas: :environment do
+		puts "System timezone: #{Timestamp.system_zone}"
+		puts "Rails' timezone: #{Timestamp.rails_zone}"
 		Timecop.freeze(Time.new(2016, 4, 11, 18, 59, 0, "-07:00"))
 		[
 			'Date.today == Date.tomorrow',
