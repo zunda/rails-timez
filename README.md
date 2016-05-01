@@ -31,6 +31,19 @@ Rails' timezone: UTC
 1993-02-24 03:00:00 +00:00 <- Time.now.in_time_zone	(ActiveSupport::TimeWithZone)
 ```
 
+### Time Travel as a Service
+```
+$ bundle exec rake timestamp:ttaas
+System timezone: UTC
+Rails' timezone: America/Los_Angeles
+> Date.today == Date.tomorrow
+=> true
+> Date.today
+=> 2016-04-12
+> Date.yesterday
+=> 2016-04-10
+```
+
 ## References
 - [RubyとRailsにおけるTime, Date, DateTime, TimeWithZoneの違い - Qiita](http://qiita.com/jnchito/items/cae89ee43c30f5d6fa2c)
 
