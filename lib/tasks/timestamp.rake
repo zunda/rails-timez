@@ -19,4 +19,17 @@ namespace :timestamp do
 			puts ts
 		end
 	end
+
+	desc "Time Travel as a Service"
+	task ttaas: :environment do
+		Timecop.freeze(Time.new(1993, 2, 24, 12, 0, 0, "+09:00"))
+		[
+			'Date.today == Date.tomorrow',
+			'Date.today',
+			'Date.yesterday'
+		].each do |cmd|
+			puts "> #{cmd}"
+			puts "=> #{eval(cmd)}"
+		end
+	end
 end
