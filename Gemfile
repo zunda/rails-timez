@@ -7,4 +7,5 @@ gem 'timecop'
 
 group :development do
 	gem 'sqlite3'
+	gem 'test-unit'
 end
