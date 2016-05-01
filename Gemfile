@@ -1,11 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '>= 5.0.0.beta4', '< 5.1'
+gem 'rails', '~> 3.2', '>= 3.2.22.2'
 
 # Freeze time
 gem 'timecop'
 
 group :development do
-	gem 'listen'
 	gem 'sqlite3'
 end

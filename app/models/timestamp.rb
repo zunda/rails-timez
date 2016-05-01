@@ -1,4 +1,4 @@
-class Timestamp < ApplicationRecord
+class Timestamp < ActiveRecord::Base
 	include ApplicationHelper
 	attr_reader :obj
 
