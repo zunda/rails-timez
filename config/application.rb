@@ -58,5 +58,8 @@ module RailsTimez
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    ENV['TZ'] = 'UTC'
+    config.time_zone = 'America/Los_Angeles'
   end
 end
