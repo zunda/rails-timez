@@ -1,6 +1,8 @@
 # rails-timez
 A small app to check timezones of Times and Dates on Rails
 
+> [TTaaS (Time Travel as a Service)](https://twitter.com/heroku/status/719712029343395841)
+
 ## Usage
 ### Preparation
 Specify Ruby version (optional)
