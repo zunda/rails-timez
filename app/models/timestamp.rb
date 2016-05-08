@@ -13,6 +13,10 @@ class Timestamp < ApplicationRecord
 		"#{@obj.strftime(@@format)} <- #{@str}\t(#{@obj.class})"
 	end
 
+	def inspect
+		"#{@obj.class}:#{@obj.to_s} #{@obj.strftime("%:z")}"
+	end
+
 	def Timestamp.evaluate(str)
 		ts = Timestamp.new
 		ts.evaluate!(str)
