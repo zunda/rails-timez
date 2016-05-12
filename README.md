@@ -46,6 +46,19 @@ Rails' timezone: America/Los_Angeles
 
 It seems that `Date.today` calls the method from [a standard library](http://ruby-doc.org/stdlib-2.3.1/libdoc/date/rdoc/Date.html#method-c-today) that honors the system timezone while `Date.yesterday` and `Date.tomorrow` are [from Rails](http://api.rubyonrails.org/v4.2/classes/Date.html#method-c-tomorrow) (ActiveSupport) which honor Rails' timezone.
 
+### Multi threaded travel around the world
+Change `ENV['TZ']` and see what happens:
+
+```
+$ bundle exec rake timezones:sys:travel
+Traveling time ...
+03:00 UTC became 12:00 in UTC (shuold be 03:00)
+03:00 UTC became 22:00 in UTC (shuold be 03:00)
+03:00 UTC became 04:00 in HST (shuold be 17:00)
+03:00 UTC became 17:00 in CET (shuold be 04:00)
+03:00 UTC became 03:00 in HST (shuold be 17:00)
+```
+
 ## References
 - [RubyとRailsにおけるTime, Date, DateTime, TimeWithZoneの違い - Qiita](http://qiita.com/jnchito/items/cae89ee43c30f5d6fa2c)
 
