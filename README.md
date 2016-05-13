@@ -61,12 +61,22 @@ Change `ENV['TZ']` and see what happens:
 
 ```
 $ bundle exec rake timezones:sys:travel
-Traveling time ...
-03:00 UTC became 12:00 in UTC (shuold be 03:00)
-03:00 UTC became 22:00 in UTC (shuold be 03:00)
-03:00 UTC became 04:00 in HST (shuold be 17:00)
-03:00 UTC became 17:00 in CET (shuold be 04:00)
+Traveling time ...!!!!
+03:00 UTC became 22:00 in Japan (shuold be 12:00)
 03:00 UTC became 03:00 in HST (shuold be 17:00)
+03:00 UTC became 12:00 in EST (shuold be 22:00)
+03:00 UTC became 17:00 in Japan (shuold be 12:00)
+```
+
+- 2 - 6 inconsistencies on ruby 2.3.1 on Ubuntu 15.10 on a 2-core CPU
+- 0 - 1 inconsistencies on ruby 2.3.1 on OSX
+
+Use Rails' `Time#in_time_zone(tz)`:
+
+```
+$ bundle exec rake timezones:rails:travel
+Traveling time ...
+completed time travel
 ```
 
 ## References

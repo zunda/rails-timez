@@ -33,16 +33,16 @@ namespace :timestamp do
 			puts "> #{cmd}"
 			puts "=> #{eval(cmd)}"
 		end
-    puts "WAT"
+		puts "WAT"
 		%w(
-      Time.now
-      Time.zone.now
+			Time.now
+			Time.zone.now
 			Date.yesterday
 			Date.today
 			Date.tomorrow
-      Time.zone.yesterday
-      Time.zone.today
-      Time.zone.tomorrow
+			Time.zone.yesterday
+			Time.zone.today
+			Time.zone.tomorrow
 		).each do |str|
 			ts = Timestamp.evaluate(str)
 			puts ts
