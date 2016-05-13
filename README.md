@@ -69,6 +69,9 @@ Traveling time ...
 03:00 UTC became 03:00 in HST (shuold be 17:00)
 ```
 
+- 5 - 6 inconsistencies on ruby 2.3.1 on Ubuntu 15.10 on a 2-core CPU
+- 0 - 1 inconsistencies on ruby 2.3.1 on OSX
+
 ## References
 - [RubyとRailsにおけるTime, Date, DateTime, TimeWithZoneの違い - Qiita](http://qiita.com/jnchito/items/cae89ee43c30f5d6fa2c)
 
