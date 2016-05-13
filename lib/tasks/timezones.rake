@@ -41,4 +41,11 @@ namespace :timezones do
       TimeZones.travel{|tz| ENV['TZ'] = tz if tz; Time.now }
 		end
 	end
+
+	namespace :rails do
+		desc "move aroud system timezones"
+		task travel: :environment do
+      TimeZones.travel{|tz| tz ? Time.now.in_time_zone(tz) : Time.zone.now }
+		end
+	end
 end
