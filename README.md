@@ -69,7 +69,7 @@ Traveling time ...!!!!
 ```
 
 - 2 - 6 inconsistencies on ruby 2.3.1 on Ubuntu 15.10 on a 2-core CPU
-- 0 - 1 inconsistencies on ruby 2.3.1 on OSX
+- 0 - 1 inconsistencies on ruby 2.3.1 on OSX 10.11.4 on 4-core CPU
 
 Use Rails' `Time#in_time_zone(tz)`:
 
