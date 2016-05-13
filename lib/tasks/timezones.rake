@@ -4,7 +4,7 @@ module TimeZones
     original = yield(nil).strftime("%H:%M %Z")
     threads = Array.new
     errors = Array.new
-    puts "Traveling time ..."
+    print "Traveling time ..."
     mutex = Mutex.new
     10000.times do
       {
@@ -19,6 +19,7 @@ module TimeZones
           if target != converted
             mutex.synchronize do
               errors << "#{original} became #{converted} in #{tz} (shuold be #{target})"
+							print '!'
             end
           end
         end
@@ -26,9 +27,9 @@ module TimeZones
     end
     threads.each{|th| th.join}
     unless errors.empty?
-      puts errors.join("\n")
+      puts "\n" + errors.join("\n")
     else
-      puts "Complete time travel"
+      puts "\ncompleted time travel"
     end
   end
 end
