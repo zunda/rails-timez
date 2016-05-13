@@ -7,7 +7,7 @@ A small app to check timezones of Times and Dates on Rails
 ### Preparation
 Specify Ruby version (optional)
 ```
-$ rbenv local 2.3.0
+$ rbenv local 2.3.1
 $ rbenv exec gem install bundler
 $ rbenv rehash
 ```
@@ -21,19 +21,20 @@ $ bundle exec rake db:migrate
 ### Show time
 ```
 $ bundle exec rake timestamp:show
-System timezone: JST
-Rails' timezone: UTC
-1993-02-24 12:00:00 +09:00 <- Time.now	(Time)
+System timezone: UTC
+Rails' timezone: America/Los_Angeles
+1993-02-24 03:00:00 +00:00 <- Time.now	(Time)
+1993-02-22 00:00:00 +00:00 <- Date.yesterday	(Date)
 1993-02-24 00:00:00 +00:00 <- Date.today	(Date)
-1993-02-24 03:00:00 +00:00 <- DateTime.current	(DateTime)
-1993-02-24 12:00:00 +09:00 <- DateTime.now	(DateTime)
-1993-02-24 03:00:00 +00:00 <- Time.zone.now	(ActiveSupport::TimeWithZone)
-1993-02-24 03:00:00 +00:00 <- Time.now.in_time_zone	(ActiveSupport::TimeWithZone)
+1993-02-24 00:00:00 +00:00 <- Date.tomorrow	(Date)
+1993-02-23 19:00:00 -08:00 <- DateTime.current	(DateTime)
+1993-02-24 03:00:00 +00:00 <- DateTime.now	(DateTime)
+1993-02-23 19:00:00 -08:00 <- Time.zone.now	(ActiveSupport::TimeWithZone)
+1993-02-23 19:00:00 -08:00 <- Time.now.in_time_zone	(ActiveSupport::TimeWithZone)
 ```
 
 ### Time Travel as a Service
 ```
-$ bundle exec rake timestamp:ttaas
 System timezone: UTC
 Rails' timezone: America/Los_Angeles
 > Date.today == Date.tomorrow
@@ -42,6 +43,15 @@ Rails' timezone: America/Los_Angeles
 => 2016-04-12
 > Date.yesterday
 => 2016-04-10
+WAT
+2016-04-12 01:59:00 +00:00 <- Time.now	(Time)
+2016-04-11 18:59:00 -07:00 <- Time.zone.now	(ActiveSupport::TimeWithZone)
+2016-04-10 00:00:00 +00:00 <- Date.yesterday	(Date)
+2016-04-12 00:00:00 +00:00 <- Date.today	(Date)
+2016-04-12 00:00:00 +00:00 <- Date.tomorrow	(Date)
+2016-04-10 00:00:00 +00:00 <- Time.zone.yesterday	(Date)
+2016-04-11 00:00:00 +00:00 <- Time.zone.today	(Date)
+2016-04-12 00:00:00 +00:00 <- Time.zone.tomorrow	(Date)
 ```
 
 It seems that `Date.today` calls the method from [a standard library](http://ruby-doc.org/stdlib-2.3.1/libdoc/date/rdoc/Date.html#method-c-today) that honors the system timezone while `Date.yesterday` and `Date.tomorrow` are [from Rails](http://api.rubyonrails.org/v4.2/classes/Date.html#method-c-tomorrow) (ActiveSupport) which honor Rails' timezone.
