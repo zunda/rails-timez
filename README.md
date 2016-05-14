@@ -79,6 +79,22 @@ Traveling time ...
 completed time travel
 ```
 
+Seems to be thread safe. But how?
+
+```
+$ bundle exec rake tzinfo:patch
+  :
+TZInfo::TimezoneOffset.new
+  @abbreviation = KST
+  @std_offset = 0
+  @utc_offset = 32400
+  @utc_total_offset = 32400
+TZInfo::TimezoneOffset#to_local(2015-08-15 00:00:00 UTC) is called
+2015-08-15 08:30:00 +0830
+```
+
+Uses tzinfo gem.
+
 ## References
 - [RubyとRailsにおけるTime, Date, DateTime, TimeWithZoneの違い - Qiita](http://qiita.com/jnchito/items/cae89ee43c30f5d6fa2c)
 
