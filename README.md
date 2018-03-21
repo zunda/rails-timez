@@ -7,7 +7,7 @@ A small app to check timezones of Times and Dates on Rails
 ### Preparation
 Specify Ruby version (optional)
 ```
-$ rbenv local 2.3.1
+$ rbenv local 2.5.0
 $ rbenv exec gem install bundler
 $ rbenv rehash
 ```
