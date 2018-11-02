@@ -35,7 +35,6 @@ build/
 /.bundle/
 /vendor/bundle
 /lib/bundler/man/
-.ruby-version
 
 # Ignore Byebug command history file.
 .byebug_history
